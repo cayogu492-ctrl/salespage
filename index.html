@@ -1,0 +1,1005 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Open Doors Scholarship Manual — Don't Lose Your Place Over a Preventable Mistake</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#101A2C;
+    --ink-2:#1B2740;
+    --ink-line:#2C3A56;
+    --paper:#F6F1E4;
+    --paper-2:#EFE7D3;
+    --paper-line:#DCD0AF;
+    --text:#1C2333;
+    --text-soft:#565C70;
+    --text-on-ink:#EDE8DA;
+    --text-on-ink-soft:#A9B0C4;
+    --gold:#C89A44;
+    --gold-deep:#9C7830;
+    --stamp-red:#A6392E;
+    --verified:#2F6F62;
+    --verified-bg:#E4EDE9;
+    --radius:2px;
+    --max:1120px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--text);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold-deep);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:1px;
+    background:var(--gold-deep);
+    display:inline-block;
+  }
+  .eyebrow.on-ink{color:var(--gold);}
+  .eyebrow.on-ink::before{background:var(--gold);}
+
+  /* ---------- Image placeholder slots ---------- */
+  .img-slot{
+    position:relative;
+    width:100%;
+    border:1px solid var(--paper-line);
+    background:
+      repeating-linear-gradient(135deg, #E6DCC0 0px, #E6DCC0 2px, #EFE7D3 2px, #EFE7D3 14px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+  }
+  .img-slot .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.04em;
+    color:var(--text-soft);
+    background:rgba(246,241,228,0.92);
+    border:1px solid var(--paper-line);
+    padding:8px 14px;
+    max-width:80%;
+    line-height:1.5;
+  }
+  .img-slot.on-ink{
+    background:
+      repeating-linear-gradient(135deg, #223055 0px, #223055 2px, #182236 2px, #182236 14px);
+    border-color:var(--ink-line);
+  }
+  .img-slot.on-ink .label{
+    color:var(--text-on-ink-soft);
+    background:rgba(16,26,44,0.9);
+    border-color:var(--ink-line);
+  }
+  .img-slot img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  /* To use a real photo: replace the .img-slot div's contents with
+     <img src="your-photo.jpg" alt="..."> and remove the .label span. */
+
+  /* ---------- Nav ---------- */
+  header.site{
+    position:sticky; top:0; z-index:40;
+    background:rgba(246,241,228,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--paper-line);
+  }
+  .navrow{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px;
+    max-width:var(--max); margin:0 auto;
+  }
+  .brand{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:17px;
+    letter-spacing:0.01em;
+  }
+  .brand .small{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:0.12em;
+    color:var(--text-soft);
+    text-transform:uppercase;
+    margin-top:2px;
+  }
+  .nav-cta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.04em;
+    text-decoration:none;
+    background:var(--ink);
+    color:var(--text-on-ink);
+    padding:10px 18px;
+    border:1px solid var(--ink);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:var(--ink);
+    color:var(--text-on-ink);
+    padding:64px 0 0;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:56px;
+    align-items:center;
+    padding-bottom:56px;
+  }
+  .hero h1{
+    font-size:clamp(32px, 4.4vw, 52px);
+    line-height:1.08;
+    color:#fff;
+    margin-top:18px;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--gold);
+  }
+  .hero p.lede{
+    margin-top:20px;
+    font-size:18px;
+    color:var(--text-on-ink-soft);
+    max-width:46ch;
+  }
+  .cta-row{
+    margin-top:32px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:18px;
+  }
+  .btn-gold{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13.5px;
+    letter-spacing:0.03em;
+    text-decoration:none;
+    background:var(--gold);
+    color:var(--ink);
+    padding:15px 26px;
+    font-weight:600;
+    border:1px solid var(--gold);
+    display:inline-block;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .btn-gold:hover{background:#DBAE5A;}
+  .price-note{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--text-on-ink-soft);
+  }
+  .price-note strong{color:#fff;}
+  .hero-img .img-slot{aspect-ratio:4/5;}
+  .hero-tag{
+    margin-top:14px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--text-on-ink-soft);
+    text-align:center;
+  }
+  .trust-strip{
+    border-top:1px solid var(--ink-line);
+    padding:18px 0;
+  }
+  .trust-strip .wrap{
+    display:flex;
+    flex-wrap:wrap;
+    gap:28px;
+    justify-content:space-between;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--text-on-ink-soft);
+    letter-spacing:0.02em;
+  }
+  .trust-strip b{color:var(--text-on-ink);}
+
+  /* ---------- Section shell ---------- */
+  section{padding:88px 0;}
+  section.tight{padding:64px 0;}
+  .section-head{
+    max-width:640px;
+    margin-bottom:48px;
+  }
+  .section-head h2{
+    font-size:clamp(26px,3.2vw,38px);
+    margin-top:14px;
+    line-height:1.15;
+  }
+  .section-head p{
+    margin-top:16px;
+    color:var(--text-soft);
+    font-size:16.5px;
+  }
+
+  /* ---------- 2am quotes ---------- */
+  .quotes{
+    background:var(--paper-2);
+    border-top:1px solid var(--paper-line);
+    border-bottom:1px solid var(--paper-line);
+  }
+  .quote-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:var(--paper-line);
+    border:1px solid var(--paper-line);
+  }
+  .quote-card{
+    background:var(--paper-2);
+    padding:28px 30px;
+  }
+  .quote-card p{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:19px;
+    line-height:1.5;
+    color:var(--text);
+  }
+  .quote-card p::before{content:"“";}
+  .quote-card p::after{content:"”";}
+  .quote-card .who{
+    margin-top:14px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--text-soft);
+  }
+
+  /* ---------- Case files (signature element) ---------- */
+  .case-files{display:flex; flex-direction:column; gap:22px;}
+  .case-card{
+    position:relative;
+    background:#fff;
+    border:1px solid var(--paper-line);
+    padding:30px 30px 26px;
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:26px;
+    align-items:center;
+  }
+  .case-card .file-no{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--text-soft);
+    letter-spacing:0.08em;
+  }
+  .case-card h3{
+    font-size:22px;
+    margin-top:6px;
+  }
+  .case-card .body-text{
+    margin-top:12px;
+    color:var(--text-soft);
+    font-size:15.5px;
+  }
+  .case-card .fix{
+    margin-top:14px;
+    font-size:14.5px;
+    padding:10px 14px;
+    background:var(--verified-bg);
+    border-left:3px solid var(--verified);
+    color:#294F46;
+  }
+  .stamp{
+    position:absolute;
+    top:22px; right:30px;
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:600;
+    font-size:12px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--stamp-red);
+    border:2px solid var(--stamp-red);
+    padding:5px 10px;
+    transform:rotate(6deg);
+    opacity:0.85;
+  }
+  .case-card .img-slot{aspect-ratio:16/10; border-radius:0;}
+  .case-note{
+    margin-top:18px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--text-soft);
+  }
+
+  /* ---------- Odds / dark stat section ---------- */
+  .odds{
+    background:var(--ink);
+    color:var(--text-on-ink);
+  }
+  .odds-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:56px;
+    align-items:center;
+  }
+  .big-stat{
+    font-family:'Fraunces', serif;
+    font-size:clamp(72px,10vw,128px);
+    line-height:0.9;
+    color:var(--gold);
+    font-weight:600;
+  }
+  .big-stat + p{
+    margin-top:10px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--text-on-ink-soft);
+    max-width:34ch;
+  }
+  .odds-right h3{
+    color:#fff;
+    font-size:24px;
+    line-height:1.3;
+  }
+  .odds-right p{
+    margin-top:14px;
+    color:var(--text-on-ink-soft);
+    font-size:16px;
+  }
+  .timeline{
+    margin-top:26px;
+    border-top:1px solid var(--ink-line);
+  }
+  .timeline-row{
+    display:flex;
+    justify-content:space-between;
+    padding:12px 0;
+    border-bottom:1px solid var(--ink-line);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+  }
+  .timeline-row span:first-child{color:var(--text-on-ink-soft);}
+  .timeline-row span:last-child{color:#fff;}
+
+  /* ---------- Toolkit / contents ---------- */
+  .toolkit{
+    display:grid;
+    grid-template-columns:0.95fr 1.05fr;
+    gap:56px;
+    align-items:start;
+  }
+  .toc-list{
+    border-top:1px solid var(--paper-line);
+  }
+  .toc-item{
+    display:flex;
+    gap:16px;
+    padding:16px 0;
+    border-bottom:1px solid var(--paper-line);
+  }
+  .toc-item .num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--gold-deep);
+    padding-top:3px;
+    min-width:24px;
+  }
+  .toc-item h4{
+    font-size:16.5px;
+    font-family:'IBM Plex Sans', sans-serif;
+    font-weight:600;
+  }
+  .toc-item p{
+    margin-top:4px;
+    font-size:14.5px;
+    color:var(--text-soft);
+  }
+  .toolkit-img .img-slot{aspect-ratio:3/4;}
+  .toolkit-caption{
+    margin-top:12px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--text-soft);
+    text-align:center;
+  }
+
+  /* ---------- Fit check ---------- */
+  .fit{
+    background:var(--paper-2);
+    border-top:1px solid var(--paper-line);
+    border-bottom:1px solid var(--paper-line);
+  }
+  .fit-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2px;
+    background:var(--paper-line);
+    border:1px solid var(--paper-line);
+    margin-top:36px;
+  }
+  .fit-col{background:var(--paper-2); padding:30px;}
+  .fit-col h4{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+  }
+  .fit-col.yes h4{color:var(--verified);}
+  .fit-col.no h4{color:var(--stamp-red);}
+  .fit-col ul{
+    list-style:none; margin:18px 0 0; padding:0;
+    display:flex; flex-direction:column; gap:12px;
+  }
+  .fit-col li{
+    padding-left:22px;
+    position:relative;
+    font-size:15px;
+    color:var(--text);
+  }
+  .fit-col.yes li::before{content:"✓"; position:absolute; left:0; color:var(--verified); font-weight:600;}
+  .fit-col.no li::before{content:"✕"; position:absolute; left:0; color:var(--stamp-red); font-weight:600;}
+
+  /* ---------- Objection / honesty ---------- */
+  .honesty{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:48px;
+    align-items:center;
+  }
+  .honesty .img-slot{aspect-ratio:1/1;}
+  .honesty-copy .eyebrow{margin-bottom:14px;}
+  .honesty-copy h2{font-size:clamp(24px,3vw,32px); line-height:1.2;}
+  .honesty-copy p{margin-top:16px; color:var(--text-soft); font-size:16px;}
+  .money-box{
+    margin-top:22px;
+    border:1px dashed var(--gold-deep);
+    padding:16px 18px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13.5px;
+    color:var(--text);
+    background:#fff;
+  }
+
+  /* ---------- Pricing / final CTA ---------- */
+  .price-section{
+    background:var(--ink);
+    color:var(--text-on-ink);
+    text-align:center;
+  }
+  .price-card{
+    max-width:560px;
+    margin:0 auto;
+    border:1px solid var(--ink-line);
+    background:var(--ink-2);
+    padding:44px 40px;
+  }
+  .price-card .eyebrow{justify-content:center;}
+  .price-card .eyebrow::before{display:none;}
+  .price-tag{
+    font-family:'Fraunces', serif;
+    font-size:56px;
+    color:#fff;
+    margin-top:14px;
+  }
+  .price-tag sup{font-size:20px; color:var(--gold);}
+  .old-price{
+    text-decoration:line-through;
+    opacity:0.6;
+    font-size:0.75em;
+  }
+  .current-price{
+    font-weight:600;
+  }
+  .btn-gold .old-price, .btn-gold .current-price{
+    font-family:'IBM Plex Mono', monospace;
+  }
+  .price-tag .old-price{
+    display:block;
+    font-size:28px;
+    color:var(--text-on-ink-soft);
+    margin-bottom:4px;
+  }
+  .price-tag .current-price{
+    color:#fff;
+  }
+  .price-tag .usd{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:14px;
+    color:var(--text-on-ink-soft);
+    margin-top:8px;
+  }
+  .price-card ul{
+    list-style:none; padding:0; margin:26px 0 0;
+    text-align:left;
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .price-card li{
+    font-size:14.5px;
+    color:var(--text-on-ink-soft);
+    padding-left:20px;
+    position:relative;
+  }
+  .price-card li::before{content:"—"; position:absolute; left:0; color:var(--gold);}
+  .price-card .btn-gold{
+    width:100%;
+    text-align:center;
+    margin-top:28px;
+    font-size:15px;
+    padding:17px 26px;
+  }
+  .price-card .fine{
+    margin-top:16px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--text-on-ink-soft);
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding:40px 0 60px;
+    border-top:1px solid var(--paper-line);
+  }
+  footer .wrap{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:20px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--text-soft);
+  }
+  footer .disclaimer{
+    max-width:640px;
+    line-height:1.6;
+  }
+
+  /* ---------- reveal-on-scroll ----------
+     Progressive enhancement: content is visible by default so it
+     never depends on JavaScript running (link previews, screenshots,
+     crawlers, slow connections, ad-blockers, script errors, etc.).
+     Only browsers where the 'js-reveal' class gets added to <html>
+     (meaning IntersectionObserver actually initialized successfully)
+     will see the fade/slide-in effect at all. */
+  .reveal{opacity:1; transform:none;}
+  html.js-reveal .reveal{
+    opacity:0;
+    transform:translateY(14px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  html.js-reveal .reveal.in{opacity:1; transform:none;}
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  @media (max-width: 860px){
+    .hero-grid, .odds-grid, .toolkit, .honesty{
+      grid-template-columns:1fr;
+    }
+    .hero-grid{padding-bottom:36px;}
+    .case-card{grid-template-columns:1fr;}
+    .case-card .img-slot{order:-1;}
+    .quote-grid, .fit-grid{grid-template-columns:1fr;}
+    .stamp{position:static; display:inline-block; margin-top:14px; transform:rotate(-2deg);}
+    section{padding:60px 0;}
+  }
+
+  @media (max-width: 480px){
+    .wrap{padding:0 18px;}
+    .navrow{padding:14px 18px; flex-wrap:wrap; gap:10px;}
+    .hero{padding-top:44px;}
+    .hero p.lede{font-size:16px;}
+    .btn-gold{padding:14px 20px; font-size:12.5px;}
+    .price-card{padding:32px 22px;}
+    .price-tag{font-size:38px;}
+    .price-tag .old-price{font-size:20px;}
+    .fit-col{padding:20px;}
+    .toolkit-img .img-slot{aspect-ratio:4/3;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="navrow">
+    <div class="brand">The Open Doors Manual<span class="small">Independent · Nigerian Applicant Edition</span></div>
+    <a class="nav-cta" href="#price">Get the manual →</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow on-ink">2026 Cycle · Registration opens August 20</span>
+        <h1>Your grades were never the problem.<br> Your <em>Process </em> was.</h1>
+        <p class="lede">Every year, strong Nigerian applicants lose their shot at a fully-funded Russian university — not from a weak profile, but from a passport spelling mismatch, a recycled letter, or a "consultant" who sounded official. This book exists to make sure that's never your reason.</p>
+        <div class="cta-row">
+          <a class="btn-gold" href="#price">Get the manual — <span class="old-price">₦5,000</span> <span class="current-price">₦3,500</span></a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <div class="img-slot">
+          <img src="hero-applicant.png" alt="A Nigerian scholarship applicant working on a laptop with a passport and application documents beside her">
+        </div>
+        <div class="hero-tag">Not affiliated with Open Doors, the Association of Global Universities, or any Russian ministry — an independent field manual, cross-checked against the official portal.</div>
+      </div>
+    </div>
+  </div>
+  <div class="trust-strip">
+    <div class="wrap">
+      <span><b>Zero cost</b> to apply, register, or win — Open Doors never charges you</span>
+      <span><b>Competitive</b> selection — prepare every stage seriously</span>
+      <span><b>12+ tools</b> included, ready to use</span>
+      <span><b>Cross-checked</b> against od.globaluni.ru</span>
+    </div>
+  </div>
+</section>
+
+<section class="quotes">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What you actually tell yourself</span>
+      <h2>If any of this sounds like your 1am, keep reading.</h2>
+    </div>
+    <div class="quote-grid reveal">
+      <div class="quote-card">
+        <p>I have my WAEC, my transcripts, my recommendation letters — but what if I mess up one field on that registration form and don't even know it until it's too late?</p>
+        <div class="who">— A first-time applicant, weeks before registration</div>
+      </div>
+      <div class="quote-card">
+        <p>Someone in my scholarship WhatsApp group said her "agent" can review her portfolio before submission. Should I pay him too?</p>
+        <div class="who">— Scrolling a scholarship group at midnight</div>
+      </div>
+      <div class="quote-card">
+        <p>I don't have three afternoons to spare for three separate letters — can I just swap the subject name and submit the same one?</p>
+        <div class="who">— Final-year student, portfolio window closing</div>
+      </div>
+      <div class="quote-card">
+        <p>What if I prepare carefully and still don't make the cut?</p>
+        <div class="who">— Reading the odds for the first time</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Case files</span>
+      <h2>Three strong applicants. Three preventable losses.</h2>
+      <p>These composite accounts are built from patterns that repeat every cycle — not because anyone lacked what it takes, but because nobody handed them the one specific detail that would have stopped it.</p>
+    </div>
+
+    <div class="case-files">
+      <div class="case-card reveal">
+        <div class="img-slot">
+          <img src="case-letter.png" alt="Printed letters on a desk with a phrase circled in red ink, a red pen resting nearby">
+        </div>
+        <div>
+          <span class="stamp">Preventable</span>
+          <div class="file-no">FILE — "It Was One Letter"</div>
+          <h3>Three subject areas. One recycled letter.</h3>
+          <p class="body-text">A strong Bachelor's-track applicant applied to three subject areas she was genuinely qualified for — then, pressed for time, wrote one motivation letter and swapped the subject name for the other two. All three came back with flat scores. Nothing about her achievements was ever in question.</p>
+          <div class="fix">The fix in the manual: a letter-by-letter framework built for three separate blank pages, not one page wearing three labels.</div>
+        </div>
+      </div>
+
+      <div class="case-card reveal">
+        <div class="img-slot">
+          <img src="case-passport.png" alt="An open passport beside a laptop, a hand pointing to the name field on the passport data page">
+        </div>
+        <div>
+          <span class="stamp">Preventable</span>
+          <div class="file-no">FILE — "The Passport Didn't Match"</div>
+          <h3>One dropped middle name. Weeks of delay.</h3>
+          <p class="body-text">An applicant registered using the name on his WAEC result — which dropped a middle name his passport's machine-readable zone included in full. He didn't notice until a document check flagged the mismatch, well after the registration deadline had closed.</p>
+          <div class="fix">The fix in the manual: the two-minute passport-to-form check, done before you type a single field.</div>
+        </div>
+      </div>
+
+      <div class="case-card reveal">
+        <div class="img-slot">
+             <img src="case-scam-agent.png" alt="An open passport beside a laptop, a hand pointing to the name field on the passport data page">
+        </div>
+        <div>
+          <span class="stamp">Preventable</span>
+          <div class="file-no">FILE — "The Agent Who Knew Everything"</div>
+          <h3>Real details. Fake access. Real fee.</h3>
+          <p class="body-text">A Master's-track applicant was contacted by someone claiming to be a former reviewer who could "pre-check" portfolios for a fee. He knew enough real details to sound credible. Her actual portfolio moved forward on its own merit regardless — his "review" cost her two weeks of trusting the wrong voice.</p>
+          <div class="fix">The fix in the manual: the eight-point scam-agent checklist — run any message against it before you reply.</div>
+        </div>
+      </div>
+    </div>
+    <p class="case-note reveal">These three accounts are fictional composites built for this book to illustrate common, preventable mistakes — not real applicants.</p>
+  </div>
+</section>
+
+<section class="odds">
+  <div class="wrap">
+    <div class="odds-grid">
+      <div class="reveal">
+        <div class="big-stat">2026</div>
+        <p>A competitive scholarship process where preparation matters. This manual helps you understand the stages, deadlines, documents and decisions that are within your control.</p>
+      </div>
+      <div class="odds-right reveal">
+        <span class="eyebrow on-ink">The 2026 cycle, at a glance</span>
+        <h3>Every stage has a date. Every date deserves preparation.</h3>
+        <p>This book was built to help you prepare before deadlines force you into rushed decisions — without promising an outcome no guide can guarantee.</p>
+        <div class="timeline">
+          <div class="timeline-row"><span>Registration opens</span><span>Aug 20, 2026</span></div>
+          <div class="timeline-row"><span>Registration closes</span><span>Nov 1, 2026</span></div>
+          <div class="timeline-row"><span>Portfolio (First Stage) window</span><span>Aug 20 – Nov 13, 2026</span></div>
+          <div class="timeline-row"><span>First Stage results / Second Stage list</span><span>Nov 13, 2026</span></div>
+          <div class="timeline-row"><span>Second Stage window</span><span>Nov 13 – Dec 21, 2026</span></div>
+          <div class="timeline-row"><span>Third Stage admission list</span><span>Dec 21, 2026</span></div>
+          <div class="timeline-row"><span>Third Stage window (Doctoral/Postdoctoral)</span><span>Dec 22, 2026 – Feb 26, 2027</span></div>
+        </div>
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text-on-ink-soft);margin-top:14px;">Dates can change. Verify the current official schedule before acting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="toolkit">
+      <div>
+        <div class="section-head reveal">
+          <span class="eyebrow">Inside the manual</span>
+          <h2>Everything the free portal tells you. Plus everything it doesn't.</h2>
+          <p>Six parts, in the order the real journey happens — built specifically around where Nigerian applicants lose points.</p>
+        </div>
+        <div class="toc-list reveal">
+          <div class="toc-item">
+            <span class="num mono">01</span>
+            <div>
+              <h4>Know Before You Apply</h4>
+              <p>Eligibility, your real track, the 2026 timeline, and the scam-agent red-flag checklist.</p>
+            </div>
+          </div>
+          <div class="toc-item">
+            <span class="num mono">02</span>
+            <div>
+              <h4>Register Without Mistakes</h4>
+              <p>Field-by-field registration, including the WAEC/NECO-versus-passport spelling trap.</p>
+            </div>
+          </div>
+          <div class="toc-item">
+            <span class="num mono">03</span>
+            <div>
+              <h4>Build Your Application</h4>
+              <p>Evidence mapping, documents, and matching your subject area to what you already studied.</p>
+            </div>
+          </div>
+          <div class="toc-item">
+            <span class="num mono">04</span>
+            <div>
+              <h4>Write an Essay That Sounds Like You</h4>
+              <p>The full motivation-letter framework, with worked examples for real subject areas.</p>
+            </div>
+          </div>
+          <div class="toc-item">
+            <span class="num mono">05</span>
+            <div>
+              <h4>Prepare, Submit & Protect Your Application</h4>
+              <p>Practice mode, the proctored Second Stage, appeals, and scam-proofing at the money stage.</p>
+            </div>
+          </div>
+          <div class="toc-item">
+            <span class="num mono">06</span>
+            <div>
+              <h4>After Submission</h4>
+              <p>Results, interviews, winning, and what university placement actually looks like.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="toolkit-img reveal">
+        <div class="img-slot">
+          <img src="toolkit.png" alt="The Application Toolkit worksheets laid out on a desk — a checklist, a scorecard, and planning sheets, with a pen and highlighter">
+        </div>
+        <p class="toolkit-caption">The Application Toolkit — 12 worksheets and checklists at the back of the book, built to be screenshotted and used, not just read.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="toolkit-previews">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">See what you get</span>
+      <h2>Don't take the toolkit on faith. See the pages you'll actually use.</h2>
+      <p>Inside are practical working pages—not just advice to read and forget.</p>
+    </div>
+    <div class="quote-grid reveal">
+      <div class="quote-card"><h4>Motivation Letter Builder</h4><p>Turn your experience, goals and subject fit into a focused letter without copying a generic template.</p></div>
+      <div class="quote-card"><h4>Essay Scorecard</h4><p>Check your draft for specificity, evidence, structure and fit before you submit.</p></div>
+      <div class="quote-card"><h4>University Choice Worksheet</h4><p>Compare universities using academic fit, research interests, language, city and practical considerations.</p></div>
+      <div class="quote-card"><h4>Post-Win Checklist</h4><p>A Nigeria → Russia planning checklist for documents, university communication, visa preparation, travel and arrival.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="bonuses">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Included with your purchase</span>
+      <h2>More than a book. A preparation system.</h2>
+    </div>
+    <div class="fit-grid reveal">
+      <div class="fit-col yes"><h4>Included — all inside the one manual</h4><ul>
+        <li>2026 Open Doors Scholarship Manual — all six parts</li>
+        <li>The Application Toolkit — 12 worksheets and checklists</li>
+        <li>Week-by-Week Countdown Planner</li>
+        <li>Nigeria → Russia Post-Win Checklist</li>
+        <li>University Placement & Choice Framework</li>
+        <li>Master Deadline Table + 2026 Quick Reference</li>
+      </ul></div>
+      <div class="fit-col"><h4>Built for action</h4><ul>
+        <li>Use the worksheets while preparing</li>
+        <li>Keep the quick reference on your phone</li>
+        <li>Print the checklists when you need them</li>
+        <li>Return to the manual at each application stage</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="about-author">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">About the author</span><h2>Built by an engineer who wanted the process to make sense.</h2></div>
+    <div class="case-card reveal"><div><h3>Ayogu Timothy</h3><p class="body-text">Ayogu Timothy is a graduate of Computer Engineering from Enugu State University of Science and Technology and the founder of Thekingskid Ventures.</p><p class="body-text">This book exists because of something he kept seeing firsthand: capable, qualified young Nigerians missing out on real opportunities—not from lack of ability, but from confusion. He wanted to bring some direction to that confusion, one program at a time, starting with Open Doors.</p><p class="body-text">Ayogu is not affiliated with Open Doors, the Association of Global Universities, or any Russian institution, and makes no claim to be. What he brings instead is an engineer's instinct for taking a confusing system apart and handing back something that actually works.</p></div></div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">Frequently asked questions</span><h2>Before you buy, here's what you should know.</h2></div>
+    <div class="toc-list reveal">
+      <div class="toc-item"><div><h4>Is this the official Open Doors website?</h4><p>No. This is an independent preparation guide and is not published, endorsed or authorized by Open Doors or the Association of Global Universities.</p></div></div>
+      <div class="toc-item"><div><h4>Do I need an agent?</h4><p>No. The manual is designed to help Nigerian applicants prepare and navigate the process independently.</p></div></div>
+      <div class="toc-item"><div><h4>Does buying the manual guarantee a scholarship?</h4><p>No. No honest guide can guarantee a competitive selection result. The manual helps you prepare for the parts of the process you can control.</p></div></div>
+      <div class="toc-item"><div><h4>Is the Open Doors application itself free?</h4><p>Yes. Use the official process and be cautious of anyone asking you to pay to apply, register or guarantee a result.</p></div></div>
+      <div class="toc-item"><div><h4>Who is this manual for?</h4><p>It is written specifically for Nigerian applicants across Bachelor's, Master's, Doctoral and Postdoctoral pathways.</p></div></div>
+      <div class="toc-item"><div><h4>What do I receive?</h4><p>Instant access to one PDF: the full manual, with the 12-worksheet Application Toolkit, the Countdown Planner, and every checklist described on this page built into it — nothing separate to download.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="fit tight">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Is this for you?</span>
+      <h2>Read the left column before the right one.</h2>
+    </div>
+    <div class="fit-grid reveal">
+      <div class="fit-col yes">
+        <h4>This is for you if</h4>
+        <ul>
+          <li>You haven't registered yet, or you're gathering documents right now</li>
+          <li>You want to apply without an agent, without guesswork, without getting scammed</li>
+          <li>You'd rather spend three afternoons on three real letters than one afternoon on a risk</li>
+          <li>You want to understand exactly how selection actually works, not a made-up percentage</li>
+        </ul>
+      </div>
+      <div class="fit-col no">
+        <h4>This is not for you if</h4>
+        <ul>
+          <li>You're looking for someone to guarantee your result — nobody honest can</li>
+          <li>You want someone else to write your letter for you, in your name</li>
+          <li>You believe a paid "connection" inside the selection committee is real</li>
+          <li>You'd rather trust a WhatsApp forward than your own participant account</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="honesty">
+      <div class="reveal">
+        <div class="img-slot">
+          <img src="honesty-notebook.png" alt="An open notebook checklist with highlighted line items and a pen resting across the spine">
+        </div>
+      </div>
+      <div class="honesty-copy reveal">
+        <span class="eyebrow">The honest part</span>
+        <h2>This book won't promise you a win. That's exactly why you can trust it.</h2>
+        <p>A scam agent will tell you they can guarantee your result. This manual won't — because that would be a lie. What it will do is make sure the only reason you don't win is genuine competition, not a preventable mistake, a scam, or an unprepared exam attempt.</p>
+        <p>It is an independent field manual, not published or authorized by the Association of Global Universities, the Ministry of Science and Higher Education of the Russian Federation, or Rossotrudnichestvo. The information is checked against official Open Doors sources at the time of publication. Always verify current dates, instructions and your participant account before acting.</p>
+        <div class="money-box">A note on money: nothing in the real Open Doors process costs you a naira, a ruble, or a dollar. If anyone asks you to pay them to apply, register, or win — they are not part of Open Doors.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="price-section" id="price">
+  <div class="wrap">
+    <div class="price-card reveal">
+      <span class="eyebrow">The Open Doors Scholarship Manual</span>
+      <h3 style="color:#fff; font-family:'Fraunces',serif; font-size:20px; margin-top:10px; font-weight:500;">The Registration, Essay, Assessment &amp; Scam-Proofing Guide for Nigerian Applicants</h3>
+      <div class="price-tag"><span class="old-price">₦5,000</span> <span class="current-price">₦3,500</span></div>
+      <ul>
+        <li>2026 Open Doors Scholarship Manual — all six parts</li>
+        <li>Full motivation-letter framework with worked examples</li>
+        <li>The Application Toolkit — 12 worksheets, built to print or screenshot</li>
+        <li>Week-by-Week Countdown Planner</li>
+        <li>Nigeria → Russia Post-Win Checklist</li>
+        <li>University Placement & Choice Framework</li>
+        <li>Master Deadline Table + 2026 Quick Reference</li>
+      </ul>
+      <a class="btn-gold" href="https://selar.com/w38817e74d">Get instant access — <span class="old-price">₦5,000</span> <span class="current-price">₦3,500</span></a>
+      <p class="fine">One-time purchase. Instant PDF access after successful payment. Official application remains free.</p>
+    </div>
+  </div>
+</section>
+
+<section id="checkout" class="price-section" style="padding-top:40px;padding-bottom:40px;">
+  <div class="wrap">
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-on-ink-soft);">SELAR CHECKOUT LINK: PASTE YOUR SELAR PRODUCT CHECKOUT URL HERE</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">This is an independent guide for Nigerian applicants preparing for the Open Doors: Russian Scholarship Project. It is not published, endorsed, or authorized by the Association of Global Universities, the Ministry of Science and Higher Education of the Russian Federation, Rossotrudnichestvo, or any Russian university. Official registration, results, and scheduling happen only at od.globaluni.ru.</div>
+    <div>© 2026 · Preparation coach, not your official record.</div>
+  </div>
+</footer>
+
+<script>
+  // Only opt into the hidden-until-scrolled animation once we know
+  // IntersectionObserver actually works. Everyone else (bots, link
+  // previews, no-JS, slow/broken scripts) just sees the content,
+  // fully visible, because .reveal defaults to opacity:1 in the CSS.
+  if ('IntersectionObserver' in window) {
+    document.documentElement.classList.add('js-reveal');
+    const els = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+  }
+</script>
+
+</body>
+</html>
