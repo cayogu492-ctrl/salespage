@@ -1,9 +1,26 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Open Doors Scholarship Manual — Don't Lose Your Place Over a Preventable Mistake</title>
+<meta name="description" content="An independent, field-tested manual for Nigerian applicants to the Open Doors: Russian Scholarship Project — registration, essay framework, assessment prep, and a full scam-agent red-flag system. 2026 Edition.">
+
+<!-- Open Graph / social share preview -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Open Doors Scholarship Manual — For Nigerian Applicants">
+<meta property="og:description" content="Don't lose a free scholarship to a preventable mistake. Registration, essay framework, assessment prep, and scam-proofing — all in one independent manual.">
+<meta property="og:image" content="og-share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="">
+
+<!-- Twitter/X card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Open Doors Scholarship Manual — For Nigerian Applicants">
+<meta name="twitter:description" content="Don't lose a free scholarship to a preventable mistake. An independent field manual for Nigerian applicants — registration, essays, assessment prep, and scam-proofing.">
+<meta name="twitter:image" content="assets/og-share.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -229,6 +246,85 @@
     letter-spacing:0.02em;
   }
   .trust-strip b{color:var(--text-on-ink);}
+
+  /* ---------- Countdown ---------- */
+  .countdown-bar{
+    margin-top:22px;
+    display:inline-flex;
+    gap:14px;
+    align-items:center;
+    background:var(--ink-2);
+    border:1px solid var(--ink-line);
+    padding:12px 18px;
+  }
+  .countdown-bar .cd-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--text-on-ink-soft);
+    letter-spacing:0.03em;
+  }
+  .countdown-bar .cd-nums{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:15px;
+    font-weight:600;
+    color:var(--gold);
+    letter-spacing:0.02em;
+  }
+  .click-proof{
+    margin-top:14px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--text-on-ink-soft);
+    min-height:16px;
+  }
+  .click-proof b{color:var(--gold);}
+
+  /* ---------- Guarantee ---------- */
+  .guarantee-box{
+    margin-top:22px;
+    background:var(--verified-bg);
+    border-left:3px solid var(--verified);
+    padding:18px 20px;
+  }
+  .guarantee-box h4{
+    font-family:'Fraunces', serif;
+    font-size:16.5px;
+    color:#1E4A40;
+  }
+  .guarantee-box p{
+    margin-top:8px;
+    font-size:14.5px;
+    color:#294F46;
+    line-height:1.55;
+  }
+
+  /* ---------- Mobile sticky buy bar ---------- */
+  .sticky-buy{
+    display:none;
+    position:fixed;
+    left:0; right:0; bottom:0;
+    z-index:50;
+    background:var(--ink);
+    border-top:1px solid var(--ink-line);
+    padding:12px 16px;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    box-shadow:0 -4px 18px rgba(0,0,0,0.25);
+  }
+  .sticky-buy .sb-price{
+    font-family:'IBM Plex Mono', monospace;
+    color:#fff;
+    font-size:13px;
+    line-height:1.3;
+  }
+  .sticky-buy .sb-price .old-price{color:var(--text-on-ink-soft);}
+  .sticky-buy .sb-price .current-price{color:var(--gold); font-weight:700; font-size:16px;}
+  .sticky-buy .btn-gold{padding:11px 18px; font-size:12.5px; white-space:nowrap;}
+  @media (max-width: 720px){
+    .sticky-buy{display:flex;}
+    body{padding-bottom:64px;}
+  }
 
   /* ---------- Section shell ---------- */
   section{padding:88px 0;}
@@ -634,7 +730,7 @@
 <header class="site">
   <div class="navrow">
     <div class="brand">The Open Doors Manual<span class="small">Independent · Nigerian Applicant Edition</span></div>
-    <a class="nav-cta" href="#price">Get the manual →</a>
+    <a class="nav-cta" href="https://selar.com/w38817e74d" id="cta-nav">Get the manual →</a>
   </div>
 </header>
 
@@ -646,8 +742,13 @@
         <h1>Your grades were never the problem.<br> Your <em>Process </em> was.</h1>
         <p class="lede">Every year, strong Nigerian applicants lose their shot at a fully-funded Russian university — not from a weak profile, but from a passport spelling mismatch, a recycled letter, or a "consultant" who sounded official. This book exists to make sure that's never your reason.</p>
         <div class="cta-row">
-          <a class="btn-gold" href="#price">Get the manual — <span class="old-price">₦5,000</span> <span class="current-price">₦3,500</span></a>
+          <a class="btn-gold" href="https://selar.com/w38817e74d" id="cta-hero">Get the manual — <span class="old-price">₦5,000</span> <span class="current-price">₦3,500</span></a>
         </div>
+        <div class="countdown-bar">
+          <span class="cd-label" id="cd-label">2026 CYCLE</span>
+          <span class="cd-nums" id="cd-nums">Registration opens August 20, 2026</span>
+        </div>
+        <p class="click-proof" id="click-proof"></p>
       </div>
       <div class="hero-img">
         <div class="img-slot">
@@ -962,17 +1063,16 @@
         <li>University Placement & Choice Framework</li>
         <li>Master Deadline Table + 2026 Quick Reference</li>
       </ul>
-      <a class="btn-gold" href="https://selar.com/w38817e74d">Get instant access — <span class="old-price">₦5,000</span> <span class="current-price">₦3,500</span></a>
+      <a class="btn-gold" href="https://selar.com/w38817e74d" id="cta-price">Get instant access — <span class="old-price">₦5,000</span> <span class="current-price">₦3,500</span></a>
       <p class="fine">One-time purchase. Instant PDF access after successful payment. Official application remains free.</p>
+      <div class="guarantee-box">
+        <h4>The guarantee</h4>
+        <p>If you find a factual error in this manual — a date, a rule, or a figure that doesn't match the official Rules of Participation — email <strong>godtim383</strong> with the page and we'll correct it and refund you in full, no argument. This manual can't guarantee your admission; it can guarantee it was built honestly.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="checkout" class="price-section" style="padding-top:40px;padding-bottom:40px;">
-  <div class="wrap">
-    <p style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-on-ink-soft);">SELAR CHECKOUT LINK: PASTE YOUR SELAR PRODUCT CHECKOUT URL HERE</p>
-  </div>
-</section>
 
 <footer>
   <div class="wrap">
@@ -980,6 +1080,11 @@
     <div>© 2026 · Preparation coach, not your official record.</div>
   </div>
 </footer>
+
+<div class="sticky-buy">
+  <span class="sb-price"><span class="old-price">₦5,000</span><br><span class="current-price">₦3,500</span></span>
+  <a class="btn-gold" href="https://selar.com/w38817e74d" id="cta-sticky">Get the manual</a>
+</div>
 
 <script>
   // Only opt into the hidden-until-scrolled animation once we know
@@ -999,6 +1104,99 @@
     }, { threshold: 0.12 });
     els.forEach(el => io.observe(el));
   }
+</script>
+
+<script>
+  /* ---------- Countdown to registration open / close ----------
+     Uses the visitor's own device clock — no network dependency,
+     so this always works even if everything else on the page fails. */
+  (function(){
+    function pad(n){ return String(n).padStart(2,'0'); }
+
+    function updateCountdown(){
+      const labelEl = document.getElementById('cd-label');
+      const numsEl = document.getElementById('cd-nums');
+      if(!labelEl || !numsEl) return;
+
+      const now = new Date();
+      const open = new Date(2026, 7, 20, 0, 0, 0);   // Aug 20, 2026
+      const close = new Date(2026, 10, 1, 23, 59, 59); // Nov 1, 2026
+
+      let target, label;
+      if (now < open) { target = open; label = 'REGISTRATION OPENS IN'; }
+      else if (now < close) { target = close; label = 'REGISTRATION CLOSES IN'; }
+      else {
+        labelEl.textContent = "THIS CYCLE'S REGISTRATION HAS CLOSED";
+        numsEl.textContent = 'Prepare now for the next cycle';
+        return;
+      }
+
+      const diff = target - now;
+      const days = Math.floor(diff / 86400000);
+      const hours = Math.floor((diff % 86400000) / 3600000);
+      const mins = Math.floor((diff % 3600000) / 60000);
+      const secs = Math.floor((diff % 60000) / 1000);
+
+      labelEl.textContent = label;
+      numsEl.textContent = days + 'd ' + pad(hours) + 'h ' + pad(mins) + 'm ' + pad(secs) + 's';
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  })();
+</script>
+
+<script>
+  /* ---------- Real click counter (social proof) ----------
+     This deliberately uses a real, live counting service rather than
+     a hardcoded or fake number — the whole point of this page is
+     honesty, so the click count should be honest too.
+     Service: CounterAPI (counterapi.dev) — free, no signup required
+     for basic namespaced counters. Swap COUNTER_NS to something
+     unique to you before launch so the count isn't shared with
+     anyone else who happens to use the same demo namespace.
+     If the API is ever unreachable, the counter line is simply
+     left blank — never replaced with a guessed or fake number. */
+  (function(){
+    const COUNTER_NS = 'thekingskid-ventures';
+    const COUNTER_KEY = 'opendoors-manual-cta-clicks';
+    const COUNTER_BASE = 'https://api.counterapi.dev/v1/' + COUNTER_NS + '/' + COUNTER_KEY;
+
+    function formatCount(n){
+      return Number(n).toLocaleString('en-US');
+    }
+    function showClickProof(n){
+      const el = document.getElementById('click-proof');
+      if(!el || typeof n !== 'number' || n <= 0) return;
+      el.innerHTML = '<b>' + formatCount(n) + '</b> clicks on "Get the manual" so far';
+    }
+
+    // Read the current count on load WITHOUT incrementing it.
+    fetch(COUNTER_BASE)
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then(data => { if (data && typeof data.value === 'number') showClickProof(data.value); })
+      .catch(() => { /* fail silently — never show a fake number */ });
+
+    // Every CTA button increments the real counter, then continues
+    // to Selar either once the request finishes or after 400ms —
+    // whichever comes first, so a slow API never blocks a buyer.
+    function wireButton(id){
+      const btn = document.getElementById(id);
+      if(!btn) return;
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        const dest = btn.getAttribute('href');
+        let navigated = false;
+        const go = () => { if(!navigated){ navigated = true; window.location.href = dest; } };
+        fetch(COUNTER_BASE + '/up')
+          .then(r => r.ok ? r.json() : Promise.reject())
+          .then(data => { if (data && typeof data.value === 'number') showClickProof(data.value); })
+          .catch(() => {})
+          .finally(go);
+        setTimeout(go, 400);
+      });
+    }
+    ['cta-nav','cta-hero','cta-price','cta-sticky'].forEach(wireButton);
+  })();
 </script>
 
 </body>
